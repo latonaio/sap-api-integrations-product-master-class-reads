@@ -1,0 +1,50 @@
+{
+	"connection_key": "response",
+	"result": true,
+	"redis_key": "abcdefg",
+	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
+	"Product": {
+		"Product": "AVC_RBT_APPL_UNIT",
+		"ProductType": "",
+		"CreationDate": "",
+		"LastChangeDate": "",
+		"IsMarkedForDeletion": null,
+		"ProductGroup": "",
+		"BaseUnit": "",
+		"ProductHierarchy": "",
+		"ProductClass": {
+			"ClassInternalID": "",
+			"KeyDate": "",
+			"ChangeNumber": "",
+			"ClassType": "",
+			"ProductClassDetails": {
+				"ClassInternalID": "",
+				"ClassType": "",
+				"ClassTypeName": "",
+				"Class": "",
+				"ClassStatus": "",
+				"ClassStatusName": "",
+				"ClassGroup": "",
+				"ClassGroupName": "",
+				"CreationDate": "",
+				"LastChangeDate": "",
+				"ValidityStartDate": "",
+				"ValidityEndDate": "",
+				"ClassLastChangedDateTime": "",
+				"KeyDate": ""
+			}
+		},
+		"ProductCharacteristic": {
+			"Product": "",
+			"ClassInternalID": "",
+			"CharcInternalID": "",
+			"KeyDate": "",
+			"ChangeNumber": "",
+			"ClassType": ""
+		}
+	},
+	"api_schema": "A_ClfnProduct",
+	"accepter": ["General"],
+	"product_code": "AVC_RBT_APPL_UNIT",
+	"deleted": false
+}

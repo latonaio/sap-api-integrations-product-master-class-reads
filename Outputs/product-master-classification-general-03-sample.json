@@ -1,0 +1,22 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-classification-reads/SAP_API_Caller/caller.go#L67",
+	"function": "sap-api-integrations-product-master-classification-reads/SAP_API_Caller.(*SAPAPICaller).General",
+	"level": "INFO",
+	"message": {
+		"ClassInternalID": "51",
+		"ClassType": "300",
+		"ClassTypeName": "Variants",
+		"Class": "AVC_RBT_APPL",
+		"ClassStatus": "1",
+		"ClassStatusName": "Released",
+		"ClassGroup": "",
+		"ClassGroupName": "",
+		"CreationDate": "/Date(1587945600000)/",
+		"LastChangeDate": "/Date(1620172800000)/",
+		"ValidityStartDate": "/Date(1587945600000)/",
+		"ValidityEndDate": "/Date(253402214400000)/",
+		"ClassLastChangedDateTime": "/Date(1620194688934+0000)/",
+		"KeyDate": "/Date(1640217600000)/"
+	},
+	"time": "2021-12-23T18:04:04.820315+09:00"
+}

@@ -1,0 +1,17 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-classification-reads/SAP_API_Caller/caller.go#L60",
+	"function": "sap-api-integrations-product-master-classification-reads/SAP_API_Caller.(*SAPAPICaller).General",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "AVC_RBT_APPL_UNIT",
+			"ClassInternalID": "51",
+			"KeyDate": "/Date(1640217600000)/",
+			"ChangeNumber": "",
+			"ClassType": "300",
+			"to_ClassDetails": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_CLFN_PRODUCT_SRV/A_ProductClass(Product='AVC_RBT_APPL_UNIT',ClassInternalID='51')/to_ClassDetails",
+			"to_Characteristics": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_CLFN_PRODUCT_SRV/A_ProductClass(Product='AVC_RBT_APPL_UNIT',ClassInternalID='51')/to_Characteristics"
+		}
+	],
+	"time": "2021-12-23T18:04:04.432372+09:00"
+}

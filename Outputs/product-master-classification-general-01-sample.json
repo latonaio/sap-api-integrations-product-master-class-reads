@@ -1,0 +1,20 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-classification-reads/SAP_API_Caller/caller.go#L53",
+	"function": "sap-api-integrations-product-master-classification-reads/SAP_API_Caller.(*SAPAPICaller).General",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "AVC_RBT_APPL_UNIT",
+			"ProductType": "KMAT",
+			"CreationDate": "/Date(1587945600000)/",
+			"LastChangeDate": "/Date(1619913600000)/",
+			"IsMarkedForDeletion": false,
+			"ProductGroup": "L004",
+			"BaseUnit": "PC",
+			"ProductHierarchy": "",
+			"to_ProductClass": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_CLFN_PRODUCT_SRV/A_ClfnProduct('AVC_RBT_APPL_UNIT')/to_ProductClass",
+			"to_ProductCharc": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_CLFN_PRODUCT_SRV/A_ClfnProduct('AVC_RBT_APPL_UNIT')/to_ProductCharc"
+		}
+	],
+	"time": "2021-12-23T18:04:04.048243+09:00"
+}
