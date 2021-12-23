@@ -24,7 +24,7 @@ sap-api-integrations-product-master-classification-reads が対応する APIサ�
 ## 本レポジトリ に 含まれる API名
 sap-api-integrations-product-master-classification-reads には、次の API をコールするためのリソースが含まれています。  
 
-* A_ClfnProduct（品目クラス - 一般）
+* A_ClfnProduct（品目クラス - 一般）※品目クラス関連データを取得するために、ToProductClass、ToProductClassDetails、ToProductCharc、と合わせて利用されます。
 * ToProductClass（品目クラス - 品目クラス）
 * ToProductClassDetails（品目クラス - 品目クラス詳細）
 * ToProductCharc（品目クラス - 品目特性）
