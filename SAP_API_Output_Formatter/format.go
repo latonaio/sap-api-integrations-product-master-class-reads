@@ -65,7 +65,7 @@ func ConvertToToProductClass(raw []byte, l *logger.Logger) ([]ToProductClass, er
 			KeyDate:               data.KeyDate,
 			ChangeNumber:          data.ChangeNumber,
 			ClassType:             data.ClassType,
-			ToProductClassDetails: data.ToProductClassDetails.Deferred.URI,
+			ToClassDetails:        data.ToClassDetails.Deferred.URI,
 			ToCharc:               data.ToCharc.Deferred.URI,
 		})
 	}
@@ -73,15 +73,15 @@ func ConvertToToProductClass(raw []byte, l *logger.Logger) ([]ToProductClass, er
 	return toProductClass, nil
 }
 
-func ConvertToToProductClassDetails(raw []byte, l *logger.Logger) (*ToProductClassDetails, error) {
-	pm := &responses.ToProductClassDetails{}
+func ConvertToToClassDetails(raw []byte, l *logger.Logger) (*ToClassDetails, error) {
+	pm := &responses.ToClassDetails{}
 
 	err := json.Unmarshal(raw, &pm)
 	if err != nil {
-		return nil, xerrors.Errorf("cannot convert to ToProductClassDetails. unmarshal error: %w", err)
+		return nil, xerrors.Errorf("cannot convert to ToClassDetails. unmarshal error: %w", err)
 	}
 
-	return &ToProductClassDetails{
+	return &ToClassDetails{
 		ClassInternalID:          pm.D.ClassInternalID,
 		ClassType:                pm.D.ClassType,
 		ClassTypeName:            pm.D.ClassTypeName,

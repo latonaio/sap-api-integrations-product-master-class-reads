@@ -59,12 +59,12 @@ func (c *SAPAPICaller) General(product string) {
 	}
 	c.log.Info(productClassData)
 
-	productClassDetailsData, err := c.callToProductClassDetails(productClassData[0].ToProductClassDetails)
+	classDetailsData, err := c.callToClassDetails(productClassData[0].ToClassDetails)
 	if err != nil {
 		c.log.Error(err)
 		return
 	}
-	c.log.Info(productClassDetailsData)
+	c.log.Info(classDetailsData)
 
 	productCharcData, err := c.callToProductCharc(generalData[0].ToProductCharc)
 	if err != nil {
@@ -114,7 +114,7 @@ func (c *SAPAPICaller) callToProductClass(url string) ([]sap_api_output_formatte
 	return data, nil
 }
 
-func (c *SAPAPICaller) callToProductClassDetails(url string) (*sap_api_output_formatter.ToProductClassDetails, error) {
+func (c *SAPAPICaller) callToClassDetails(url string) (*sap_api_output_formatter.ToClassDetails, error) {
 	req, _ := http.NewRequest("GET", url, nil)
 	c.setHeaderAPIKeyAccept(req)
 
@@ -125,7 +125,7 @@ func (c *SAPAPICaller) callToProductClassDetails(url string) (*sap_api_output_fo
 	defer resp.Body.Close()
 
 	byteArray, _ := ioutil.ReadAll(resp.Body)
-	data, err := sap_api_output_formatter.ConvertToToProductClassDetails(byteArray, c.log)
+	data, err := sap_api_output_formatter.ConvertToToClassDetails(byteArray, c.log)
 	if err != nil {
 		return nil, xerrors.Errorf("convert error: %w", err)
 	}

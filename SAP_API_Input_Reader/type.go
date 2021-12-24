@@ -63,7 +63,7 @@ type SDC struct {
 		ProductType         string      `json:"ProductType"`
 		CreationDate        string      `json:"CreationDate"`
 		LastChangeDate      string      `json:"LastChangeDate"`
-		IsMarkedForDeletion interface{} `json:"IsMarkedForDeletion"`
+		IsMarkedForDeletion bool        `json:"IsMarkedForDeletion"`
 		ProductGroup        string      `json:"ProductGroup"`
 		BaseUnit            string      `json:"BaseUnit"`
 		ProductHierarchy    string      `json:"ProductHierarchy"`
@@ -72,7 +72,7 @@ type SDC struct {
 			KeyDate             string `json:"KeyDate"`
 			ChangeNumber        string `json:"ChangeNumber"`
 			ClassType           string `json:"ClassType"`
-			ProductClassDetails struct {
+			ClassDetails        struct {
 				ClassType                string `json:"ClassType"`
 				ClassTypeName            string `json:"ClassTypeName"`
 				Class                    string `json:"Class"`
@@ -86,7 +86,7 @@ type SDC struct {
 				ValidityEndDate          string `json:"ValidityEndDate"`
 				ClassLastChangedDateTime string `json:"ClassLastChangedDateTime"`
 				KeyDate                  string `json:"KeyDate"`
-			} `json:"ProductClassDetails"`
+			} `json:"ClassDetails"`
 		} `json:"ProductClass"`
 		ProductCharacteristic struct {
 			ClassInternalID string `json:"ClassInternalID"`

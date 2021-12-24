@@ -1,6 +1,6 @@
 package responses
 
-type ToProductClassDetails struct {
+type ToClassDetails struct {
 	D struct {
 		Metadata struct {
 			ID   string `json:"id"`

@@ -29,11 +29,11 @@ type ToProductClass struct {
 	KeyDate                  string `json:"KeyDate"`
 	ChangeNumber             string `json:"ChangeNumber"`
 	ClassType                string `json:"ClassType"`
-	ToProductClassDetails    string `json:"to_ClassDetails"`
+	ToClassDetails           string `json:"to_ClassDetails"`
 	ToCharc                  string `json:"to_Characteristics"`
 }
 
-type ToProductClassDetails struct {
+type ToClassDetails struct {
 	ClassInternalID               string      `json:"ClassInternalID"`
 	ClassType                     string      `json:"ClassType"`
 	ClassTypeName                 string      `json:"ClassTypeName"`

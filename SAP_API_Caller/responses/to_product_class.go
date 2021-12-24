@@ -13,7 +13,7 @@ type ToProductClass struct {
 			KeyDate           string `json:"KeyDate"`
 			ChangeNumber      string `json:"ChangeNumber"`
 			ClassType         string `json:"ClassType"`
-			ToProductClassDetails struct {
+			ToClassDetails struct {
 				Deferred struct {
 					URI string `json:"uri"`
 				} `json:"__deferred"`
