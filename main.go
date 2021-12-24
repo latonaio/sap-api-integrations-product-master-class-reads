@@ -23,7 +23,7 @@ func main() {
 	}
 
 	caller.AsyncGetProductMasterClass(
-		inoutSDC.Product.Product,
+		inoutSDC.ProductClass.Product,
 
 		accepter,
 	)

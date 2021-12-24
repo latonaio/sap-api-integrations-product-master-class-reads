@@ -58,7 +58,7 @@ type SDC struct {
 	Result        bool   `json:"result"`
 	RedisKey      string `json:"redis_key"`
 	Filepath      string `json:"filepath"`
-	Product       struct {
+	ProductClass  struct {
 		Product             string      `json:"Product"`
 		ProductType         string      `json:"ProductType"`
 		CreationDate        string      `json:"CreationDate"`
@@ -95,7 +95,7 @@ type SDC struct {
 			ChangeNumber    string `json:"ChangeNumber"`
 			ClassType       string `json:"ClassType"`
 		} `json:"ProductCharacteristic"`
-	} `json:"Product"`
+	} `json:"ProductClass"`
 	APISchema   string   `json:"api_schema"`
 	Accepter    []string `json:"accepter"`
 	ProductCode string   `json:"product_code"`

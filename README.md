@@ -24,9 +24,9 @@ sap-api-integrations-product-master-class-reads が対応する APIサービス 
 ## 本レポジトリ に 含まれる API名
 sap-api-integrations-product-master-class-reads には、次の API をコールするためのリソースが含まれています。  
 
-* A_ClfnProduct（品目クラス - 一般）※品目クラス関連データを取得するために、ToProductClass、ToProductClassDetails、ToProductCharc、と合わせて利用されます。
+* A_ClfnProduct（品目クラス - 一般）※品目クラス関連データを取得するために、ToProductClass、ToClassDetails、ToProductCharc、と合わせて利用されます。
 * ToProductClass（品目クラス - 品目クラス）
-* ToProductClassDetails（品目クラス - 品目クラス詳細）
+* ToClassDetails（品目クラス - クラス詳細）
 * ToProductCharc（品目クラス - 品目特性）
 
 ## API への 値入力条件 の 初期値
@@ -34,7 +34,7 @@ sap-api-integrations-product-master-class-reads において、API への値入�
 
 ### SDC レイアウト
 
-* inoutSDC.Product.Product（品目）
+* inoutSDC.ProductClass.Product（品目）
 
 ## SAP API Bussiness Hub の API の選択的コール
 
