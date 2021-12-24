@@ -1,4 +1,4 @@
-module sap-api-integrations-product-master-classification-reads
+module sap-api-integrations-product-master-class-reads
 
 go 1.17
 

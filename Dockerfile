@@ -12,7 +12,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o sap-api-integrations-product-master-classification-reads
+RUN go build -o sap-api-integrations-product-master-class-reads
 
 # Runtime Container
 FROM alpine:3.14
@@ -22,7 +22,7 @@ ENV SERVICE=sap-api-integrations-product-master-classification-reads \
 
 WORKDIR ${AION_HOME}
 
-COPY --from=builder /go/src/github.com/latonaio/sap-api-integrations-product-master-classification-reads .
+COPY --from=builder /go/src/github.com/latonaio/sap-api-integrations-product-master-class-reads .
 COPY --from=builder /go/src/github.com/latonaio/sample.json .
 
-CMD ["./sap-api-integrations-product-master-classification-reads"]
+CMD ["./sap-api-integrations-product-master-class-reads"]

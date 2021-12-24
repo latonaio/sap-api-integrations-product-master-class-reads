@@ -1,8 +1,8 @@
 package main
 
 import (
-	sap_api_caller "sap-api-integrations-product-master-classification-reads/SAP_API_Caller"
-	"sap-api-integrations-product-master-classification-reads/sap_api_input_reader"
+	sap_api_caller "sap-api-integrations-product-master-class-reads/SAP_API_Caller"
+	"sap-api-integrations-product-master-class-reads/sap_api_input_reader"
 
 	"github.com/latonaio/golang-logging-library/logger"
 )

@@ -2,7 +2,7 @@ package sap_api_output_formatter
 
 import (
 	"encoding/json"
-	"sap-api-integrations-product-master-classification-reads/SAP_API_Caller/responses"
+	"sap-api-integrations-product-master-class-reads/SAP_API_Caller/responses"
 
 	"github.com/latonaio/golang-logging-library/logger"
 	"golang.org/x/xerrors"
@@ -26,16 +26,16 @@ func ConvertToGeneral(raw []byte, l *logger.Logger) ([]General, error) {
 	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
 		data := pm.D.Results[i]
 		general = append(general, General{
-	Product:                       data.Product,
-	ProductType:                   data.ProductType,
-	CreationDate:                  data.CreationDate,
-	LastChangeDate:                data.LastChangeDate,
-	IsMarkedForDeletion:           data.IsMarkedForDeletion,
-	ProductGroup:                  data.ProductGroup,
-	BaseUnit:                      data.BaseUnit,
-	ProductHierarchy:              data.ProductHierarchy,
-	ToProductClass:                data.ToProductClass.Deferred.URI,
-	ToProductCharc:                data.ToProductCharc.Deferred.URI,
+			Product:             data.Product,
+			ProductType:         data.ProductType,
+			CreationDate:        data.CreationDate,
+			LastChangeDate:      data.LastChangeDate,
+			IsMarkedForDeletion: data.IsMarkedForDeletion,
+			ProductGroup:        data.ProductGroup,
+			BaseUnit:            data.BaseUnit,
+			ProductHierarchy:    data.ProductHierarchy,
+			ToProductClass:      data.ToProductClass.Deferred.URI,
+			ToProductCharc:      data.ToProductCharc.Deferred.URI,
 		})
 	}
 
@@ -60,13 +60,13 @@ func ConvertToToProductClass(raw []byte, l *logger.Logger) ([]ToProductClass, er
 	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
 		data := pm.D.Results[i]
 		toProductClass = append(toProductClass, ToProductClass{
-	Product:                  data.Product,
-	ClassInternalID:          data.ClassInternalID,
-	KeyDate:                  data.KeyDate,
-	ChangeNumber:             data.ChangeNumber,
-	ClassType:                data.ClassType,
-	ToProductClassDetails:    data.ToProductClassDetails.Deferred.URI,
-	ToCharc:                  data.ToCharc.Deferred.URI,
+			Product:               data.Product,
+			ClassInternalID:       data.ClassInternalID,
+			KeyDate:               data.KeyDate,
+			ChangeNumber:          data.ChangeNumber,
+			ClassType:             data.ClassType,
+			ToProductClassDetails: data.ToProductClassDetails.Deferred.URI,
+			ToCharc:               data.ToCharc.Deferred.URI,
 		})
 	}
 
@@ -82,20 +82,20 @@ func ConvertToToProductClassDetails(raw []byte, l *logger.Logger) (*ToProductCla
 	}
 
 	return &ToProductClassDetails{
-	ClassInternalID:               pm.D.ClassInternalID,
-	ClassType:                     pm.D.ClassType,
-	ClassTypeName:                 pm.D.ClassTypeName,
-	Class:                         pm.D.Class,
-	ClassStatus:                   pm.D.ClassStatus,
-	ClassStatusName:               pm.D.ClassStatusName,
-	ClassGroup:                    pm.D.ClassGroup,
-	ClassGroupName:                pm.D.ClassGroupName,
-	CreationDate:                  pm.D.CreationDate,
-	LastChangeDate:                pm.D.LastChangeDate,
-	ValidityStartDate:             pm.D.ValidityStartDate,
-	ValidityEndDate:               pm.D.ValidityEndDate,
-	ClassLastChangedDateTime:      pm.D.ClassLastChangedDateTime,
-	KeyDate:                       pm.D.KeyDate,
+		ClassInternalID:          pm.D.ClassInternalID,
+		ClassType:                pm.D.ClassType,
+		ClassTypeName:            pm.D.ClassTypeName,
+		Class:                    pm.D.Class,
+		ClassStatus:              pm.D.ClassStatus,
+		ClassStatusName:          pm.D.ClassStatusName,
+		ClassGroup:               pm.D.ClassGroup,
+		ClassGroupName:           pm.D.ClassGroupName,
+		CreationDate:             pm.D.CreationDate,
+		LastChangeDate:           pm.D.LastChangeDate,
+		ValidityStartDate:        pm.D.ValidityStartDate,
+		ValidityEndDate:          pm.D.ValidityEndDate,
+		ClassLastChangedDateTime: pm.D.ClassLastChangedDateTime,
+		KeyDate:                  pm.D.KeyDate,
 	}, nil
 }
 
@@ -117,12 +117,12 @@ func ConvertToToProductCharc(raw []byte, l *logger.Logger) ([]ToProductCharc, er
 	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
 		data := pm.D.Results[i]
 		toProductCharc = append(toProductCharc, ToProductCharc{
-	Product:         data.Product,
-	ClassInternalID: data.ClassInternalID,
-	CharcInternalID: data.CharcInternalID,
-	KeyDate:         data.KeyDate,
-	ChangeNumber:    data.ChangeNumber,
-	ClassType:       data.ClassType,
+			Product:         data.Product,
+			ClassInternalID: data.ClassInternalID,
+			CharcInternalID: data.CharcInternalID,
+			KeyDate:         data.KeyDate,
+			ChangeNumber:    data.ChangeNumber,
+			ClassType:       data.ClassType,
 		})
 	}
 

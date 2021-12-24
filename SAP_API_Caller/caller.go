@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	sap_api_output_formatter "sap-api-integrations-product-master-classification-reads/SAP_API_Output_Formatter"
+	sap_api_output_formatter "sap-api-integrations-product-master-class-reads/SAP_API_Output_Formatter"
 	"strings"
 	"sync"
 
@@ -65,7 +65,7 @@ func (c *SAPAPICaller) General(product string) {
 		return
 	}
 	c.log.Info(productClassDetailsData)
-	
+
 	productCharcData, err := c.callToProductCharc(generalData[0].ToProductCharc)
 	if err != nil {
 		c.log.Error(err)
@@ -149,7 +149,6 @@ func (c *SAPAPICaller) callToProductCharc(url string) ([]sap_api_output_formatte
 	}
 	return data, nil
 }
-
 
 func (c *SAPAPICaller) setHeaderAPIKeyAccept(req *http.Request) {
 	req.Header.Set("APIKey", c.apiKey)
