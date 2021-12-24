@@ -8,12 +8,12 @@ import (
 	"golang.org/x/xerrors"
 )
 
-func ConvertToGeneral(raw []byte, l *logger.Logger) ([]General, error) {
-	pm := &responses.General{}
+func ConvertToProductGeneral(raw []byte, l *logger.Logger) ([]ProductGeneral, error) {
+	pm := &responses.ProductGeneral{}
 
 	err := json.Unmarshal(raw, pm)
 	if err != nil {
-		return nil, xerrors.Errorf("cannot convert to General. unmarshal error: %w", err)
+		return nil, xerrors.Errorf("cannot convert to ProductGeneral. unmarshal error: %w", err)
 	}
 	if len(pm.D.Results) == 0 {
 		return nil, xerrors.New("Result data is not exist")
@@ -22,10 +22,10 @@ func ConvertToGeneral(raw []byte, l *logger.Logger) ([]General, error) {
 		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
 	}
 
-	general := make([]General, 0, 10)
+	productGeneral := make([]ProductGeneral, 0, 10)
 	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
 		data := pm.D.Results[i]
-		general = append(general, General{
+		productGeneral = append(productGeneral, ProductGeneral{
 			Product:             data.Product,
 			ProductType:         data.ProductType,
 			CreationDate:        data.CreationDate,
@@ -39,7 +39,7 @@ func ConvertToGeneral(raw []byte, l *logger.Logger) ([]General, error) {
 		})
 	}
 
-	return general, nil
+	return productGeneral, nil
 }
 
 func ConvertToToProductClass(raw []byte, l *logger.Logger) ([]ToProductClass, error) {

@@ -10,7 +10,7 @@ type ProductMasterClassReads struct {
 	Deleted            bool   `json:"deleted"`
 }    
     
-type General struct {
+type ProductGeneral struct {
 	Product                       string      `json:"Product"`
 	ProductType                   string      `json:"ProductType"`
 	CreationDate                  string      `json:"CreationDate"`

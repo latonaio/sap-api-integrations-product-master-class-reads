@@ -31,9 +31,9 @@ func (c *SAPAPICaller) AsyncGetProductMasterClass(product string, accepter []str
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
 		switch fn {
-		case "General":
+		case "ProductGeneral":
 			func() {
-				c.General(product)
+				c.ProductGeneral(product)
 				wg.Done()
 			}()
 		default:
@@ -44,15 +44,15 @@ func (c *SAPAPICaller) AsyncGetProductMasterClass(product string, accepter []str
 	wg.Wait()
 }
 
-func (c *SAPAPICaller) General(product string) {
-	generalData, err := c.callProductMasterClassSrvAPIRequirementGeneral("A_ClfnProduct", product)
+func (c *SAPAPICaller) ProductGeneral(product string) {
+	productGeneralData, err := c.callProductMasterClassSrvAPIRequirementProductGeneral("A_ClfnProduct", product)
 	if err != nil {
 		c.log.Error(err)
 		return
 	}
-	c.log.Info(generalData)
+	c.log.Info(productGeneralData)
 
-	productClassData, err := c.callToProductClass(generalData[0].ToProductClass)
+	productClassData, err := c.callToProductClass(productGeneralData[0].ToProductClass)
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -66,7 +66,7 @@ func (c *SAPAPICaller) General(product string) {
 	}
 	c.log.Info(classDetailsData)
 
-	productCharcData, err := c.callToProductCharc(generalData[0].ToProductCharc)
+	productCharcData, err := c.callToProductCharc(productGeneralData[0].ToProductCharc)
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -75,12 +75,12 @@ func (c *SAPAPICaller) General(product string) {
 
 }
 
-func (c *SAPAPICaller) callProductMasterClassSrvAPIRequirementGeneral(api, product string) ([]sap_api_output_formatter.General, error) {
+func (c *SAPAPICaller) callProductMasterClassSrvAPIRequirementProductGeneral(api, product string) ([]sap_api_output_formatter.ProductGeneral, error) {
 	url := strings.Join([]string{c.baseURL, "API_CLFN_PRODUCT_SRV", api}, "/")
 	req, _ := http.NewRequest("GET", url, nil)
 
 	c.setHeaderAPIKeyAccept(req)
-	c.getQueryWithGeneral(req, product)
+	c.getQueryWithProductGeneral(req, product)
 
 	resp, err := new(http.Client).Do(req)
 	if err != nil {
@@ -89,7 +89,7 @@ func (c *SAPAPICaller) callProductMasterClassSrvAPIRequirementGeneral(api, produ
 	defer resp.Body.Close()
 
 	byteArray, _ := ioutil.ReadAll(resp.Body)
-	data, err := sap_api_output_formatter.ConvertToGeneral(byteArray, c.log)
+	data, err := sap_api_output_formatter.ConvertToProductGeneral(byteArray, c.log)
 	if err != nil {
 		return nil, xerrors.Errorf("convert error: %w", err)
 	}
@@ -155,7 +155,7 @@ func (c *SAPAPICaller) setHeaderAPIKeyAccept(req *http.Request) {
 	req.Header.Set("Accept", "application/json")
 }
 
-func (c *SAPAPICaller) getQueryWithGeneral(req *http.Request, product string) {
+func (c *SAPAPICaller) getQueryWithProductGeneral(req *http.Request, product string) {
 	params := req.URL.Query()
 	params.Add("$filter", fmt.Sprintf("Product eq '%s'", product))
 	req.URL.RawQuery = params.Encode()

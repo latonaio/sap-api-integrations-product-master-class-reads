@@ -1,6 +1,6 @@
 package responses
 
-type General struct {
+type ProductGeneral struct {
 	D struct {
 		Results []struct {
 			Metadata struct {

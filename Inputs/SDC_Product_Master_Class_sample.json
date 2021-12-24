@@ -42,7 +42,7 @@
 		}
 	},
 	"api_schema": "A_ClfnProduct",
-	"accepter": ["General"],
+	"accepter": ["ProductGeneral"],
 	"product_code": "AVC_RBT_APPL_UNIT",
 	"deleted": false
 }

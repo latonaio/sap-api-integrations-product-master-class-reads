@@ -44,11 +44,11 @@ Latona および AION の SAP 関連リソースでは、Inputs フォルダ下�
 * sample.jsonの記載例(1)  
 
 accepter において 下記の例のように、データの種別（＝APIの種別）を指定します。  
-ここでは、"Characteristic" が指定されています。
+ここでは、"ProductGeneral" が指定されています。
 
 ```
 	"api_schema": "A_ClfnProduct",
-	"accepter": ["General"],
+	"accepter": ["ProductGeneral"],
 	"product_code": "AVC_RBT_APPL_UNIT",
 	"deleted": false
 ```
@@ -75,9 +75,9 @@ func (c *SAPAPICaller) AsyncGetProductMasterClass(product string, accepter []str
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
 		switch fn {
-		case "General":
+		case "ProductGeneral":
 			func() {
-				c.General(product)
+				c.ProductGeneral(product)
 				wg.Done()
 			}()
 		default:
@@ -92,13 +92,13 @@ func (c *SAPAPICaller) AsyncGetProductMasterClass(product string, accepter []str
 ## Output  
 本マイクロサービスでは、[golang-logging-library](https://github.com/latonaio/golang-logging-library) により、以下のようなデータがJSON形式で出力されます。  
 以下の sample.json の例は、SAP の 品目クラス　一般データ が取得された結果の JSON の例です。  
-以下の項目のうち、"Product" ～ "to_ProductCharc" は、/SAP_API_Output_Formatter/type.go 内 の type General{}による出力結果です。  
+以下の項目のうち、"Product" ～ "to_ProductCharc" は、/SAP_API_Output_Formatter/type.go 内 の type ProductGeneral{}による出力結果です。  
 "cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
 
 ```
 {
 	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-class-reads/SAP_API_Caller/caller.go#L53",
-	"function": "sap-api-integrations-product-master-class-reads/SAP_API_Caller.(*SAPAPICaller).General",
+	"function": "sap-api-integrations-product-master-class-reads/SAP_API_Caller.(*SAPAPICaller).ProductGeneral",
 	"level": "INFO",
 	"message": [
 		{
