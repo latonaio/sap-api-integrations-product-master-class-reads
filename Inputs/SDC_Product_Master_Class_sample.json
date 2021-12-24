@@ -18,7 +18,6 @@
 			"ChangeNumber": "",
 			"ClassType": "",
 			"ProductClassDetails": {
-				"ClassInternalID": "",
 				"ClassType": "",
 				"ClassTypeName": "",
 				"Class": "",
@@ -35,7 +34,6 @@
 			}
 		},
 		"ProductCharacteristic": {
-			"Product": "",
 			"ClassInternalID": "",
 			"CharcInternalID": "",
 			"KeyDate": "",

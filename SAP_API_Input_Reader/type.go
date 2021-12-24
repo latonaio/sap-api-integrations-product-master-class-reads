@@ -73,7 +73,6 @@ type SDC struct {
 			ChangeNumber        string `json:"ChangeNumber"`
 			ClassType           string `json:"ClassType"`
 			ProductClassDetails struct {
-				ClassInternalID          string `json:"ClassInternalID"`
 				ClassType                string `json:"ClassType"`
 				ClassTypeName            string `json:"ClassTypeName"`
 				Class                    string `json:"Class"`
@@ -90,7 +89,6 @@ type SDC struct {
 			} `json:"ProductClassDetails"`
 		} `json:"ProductClass"`
 		ProductCharacteristic struct {
-			Product         string `json:"Product"`
 			ClassInternalID string `json:"ClassInternalID"`
 			CharcInternalID string `json:"CharcInternalID"`
 			KeyDate         string `json:"KeyDate"`
